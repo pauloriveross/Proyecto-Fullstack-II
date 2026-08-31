@@ -1,11 +1,70 @@
-.navbar{
-    background-color : #F4E2DE !important;}
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap");
+body{
+    background-color: #f4e2de;
+}
+.navbar {
+  background-color: #f4e2de !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
 
 .navbar .nav-link {
-    color: #4A4A4A !important; 
-    font-weight: 500;
+  color: #4a4a4a !important;
+  font-weight: 500;
 }
 
 .navbar .nav-link:hover {
-    color: #D25380 !important; 
+  color: #d25380 !important;
+}
+
+.hero {
+  background-color: #f4e2de !important;
+}
+
+h1,
+h3 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: #5d4037;
+}
+h3{
+    font-size: 30px;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  color: #858f94;
+}
+
+.btn {
+    font-family: "Lato", sans-serif;
+    background-color: #f4e2de ;
+    color: #8B4513;
+    border-radius: 10px;
+    border: #8B4513 solid 3px;
+}
+.btn:hover{
+  background-color: #FFC0CB;
+    color: #8B4513;  
+    border: #8B4513 solid 3px;
+}
+
+.btn-hero{
+    padding: 15px;
+    margin: 10px;
+      font-size: 20px;
+
+}
+
+.card{
+    height: auto;
+    max-width: 250px;
+   margin: 20px;
+   padding: 20px;
 }
