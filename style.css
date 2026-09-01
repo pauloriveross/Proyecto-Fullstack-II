@@ -113,3 +113,8 @@ p {
   scale: 1.2;
   
 }
+
+.footer-container{
+  background-color: #ffc0cb;
+  display: flex;
+}
