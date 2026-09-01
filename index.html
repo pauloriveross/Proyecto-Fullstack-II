@@ -100,36 +100,89 @@
     </header>
 
     <main>
-     <section class="hero">
-  <div class="container seccion-hero">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center">
-        <img
-          src="img/logo.png"
-          alt="Logo Pastelería Mil Sabores"
-          class="img-fluid my-4"
-          style="max-height: 500px;"
-        />
-      </div>
-      <div class="col-md-6">
-        <h1>Pastelería Mil Sabores</h1>
-        <p>
-          Pastelería 1000 Sabores celebra su 50 aniversario como un referente en la repostería chilena.
-          Famosa por su participación en un récord Guinness en 1995, cuando colaboró en la creación de la
-          torta más grande del mundo, la pastelería busca renovar su sistema de ventas online para ofrecer
-          una experiencia de compra moderna y accesible para sus clientes.
-        </p>
-        <button class="btn btn-hero">Ver catalogo</button>
-        <button  class="btn btn-hero" onclick="location.href='nosotros.html'" >Sobre nosotros</button>
-      </div>
+      <section class="hero">
+        <div class="container seccion-hero">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+              <img
+                src="img/logo.png"
+                alt="Logo Pastelería Mil Sabores"
+                class="img-fluid my-4"
+                style="max-height: 500px"
+              />
+            </div>
+            <div class="col-md-6">
+              <h1>Pastelería Mil Sabores</h1>
+              <p>
+                Pastelería 1000 Sabores celebra su 50 aniversario como un
+                referente en la repostería chilena. Famosa por su participación
+                en un récord Guinness en 1995, cuando colaboró en la creación de
+                la torta más grande del mundo, la pastelería busca renovar su
+                sistema de ventas online para ofrecer una experiencia de compra
+                moderna y accesible para sus clientes.
+              </p>
+              
+              <a href="#catalogo" class="btn btn-hero">Ver catalogo</a>
+              <a class="btn btn-hero" href="#nosotros">Sobre nosotros</a>
+            </div>
+          </div>
+        </div>
+       <section class="ofertas container">
+  <div class="card-oferta row">
+    <div>
+      <p>
+        Implementar un sistema de registro que permita a usuarios mayores
+        de 50 años recibir un descuento del 50% en todos los productos. o
+        Ofrecer un descuento del 10% de por vida para usuarios que se
+        registren con el código "FELICES50". o Proveer tortas gratis para
+        estudiantes de Duoc en su cumpleaños al registrarse con su correo
+        institucional.
+      </p>
+      
+      <button class="btn-oferta">Inicia Sesión Aqui</button>
     </div>
   </div>
-  
 </section>
-      <section class="productos container-fluid">
-        <div id="productos" class="row justify-content-center">
-
-        </div>
+        <section class="nosotros" id="nosotros">
+          <div class="container seccion-hero">
+            <div class="row align-items-center">
+              <h1
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                Sobre nosotros
+              </h1>
+              <div class="col-md-6 text-center">
+                <h1>Nuestra Misión</h1>
+                <p>
+                  Ofrecer una experiencia dulce y memorable a nuestros clientes,
+                  proporcionando tortas y productos de repostería de alta
+                  calidad para todas las ocasiones, mientras celebramos nuestras
+                  raíces históricas y fomentamos la creatividad en la
+                  repostería.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <h1>Visión</h1>
+                <p>
+                  Convertirnos en la tienda online líder de productos de
+                  repostería en Chile, conocida por nuestra innovación, calidad
+                  y el impacto positivo en la comunidad, especialmente en la
+                  formación de nuevos talentos en gastronomía.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="productos container-fluid" id="catalogo">
+        <h1 style="display: flex; justify-content: center; align-items: center">
+          Nuestros productos
+        </h1>
+        <div id="productos" class="row justify-content-center"></div>
       </section>
     </main>
 
