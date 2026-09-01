@@ -118,3 +118,20 @@ p {
   background-color: #ffc0cb;
   display: flex;
 }
+
+.carrito{
+  margin-right: 10px;
+  margin-left: 10px;
+  
+}
+
+.btn-nav{
+  border: none;
+  background-color: transparent;
+  color: #858f94;
+  font-size: 25px;
+}
+.btn-nav:hover{
+  scale: 1.2;
+}
+

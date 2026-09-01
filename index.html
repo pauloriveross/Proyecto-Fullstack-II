@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -90,8 +94,32 @@
                 placeholder=""
                 aria-label="Buscar"
               />
-              <button class="btn btn-outline-success" type="submit">
-                Buscar
+              <button class="btn-nav" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+
+              <button
+                type="button"
+                class="carrito btn-nav position-relative"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#carritoOffcanvas"
+                aria-controls="carritoOffcanvas"
+              >
+                <i class="bi bi-cart"></i>
+                <span
+                  id="cantidad"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+                >
+                  0
+                </span>
+              </button>
+              <button
+                type="button"
+                class="btn-nav"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <i class="bi bi-person"></i>
               </button>
             </form>
           </div>
@@ -259,9 +287,41 @@
     <footer>
       <div class="footer-container">
         <h3>Pasteleria</h3>
-
       </div>
     </footer>
+
+    <!-- MODAL PARA EL CARRITO -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="carritoOffcanvas"
+      aria-labelledby="carritoOffcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="carritoOffcanvasLabel">Tu Carrito</h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <div id="items-carrito" class="overflow-auto flex-grow-1">
+          <p class="text-muted text-center my-4">El carrito está vacío.</p>
+        </div>
+        <div class="border-top pt-3">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <strong>Total:</strong>
+            <span id="total-carrito" class="fs-5 fw-bold">$0 CLP</span>
+          </div>
+          <button id="btn-vaciar" class="btn btn-outline-danger w-100 mb-2">
+            Vaciar Carrito
+          </button>
+          <button class="btn btn-success w-100">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="function.js"></script>

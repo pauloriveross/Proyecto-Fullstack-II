@@ -18,6 +18,7 @@ const productos = [
   { codigo: "TE002",imagen:'tortaboda.png', categoria: "Tortas Especiales", nombre: "Torta Especial de Boda", precio: 60000 }
 ];
 
+const carrito = []
 
 function crearCard(producto) {
   const card = document.createElement('div');
@@ -32,7 +33,9 @@ function crearCard(producto) {
         />
     <h3>${producto.nombre}</h3>
     <p>$${producto.precio} CLP</p>
-    <button class="btn">Comprar</button>
+    <button class="btn" onclick="agregarAlCarrito('${producto.codigo}')">
+      Agregar al carro
+    </button>
   `;
 
   return card;
@@ -46,6 +49,9 @@ function renderizarProductos(lista) {
     contenedor.appendChild(card);
   });
 }
+
+
+
 
 
 renderizarProductos(productos);
