@@ -220,15 +220,19 @@
         </div>
         <section class="ofertas container">
           <div class="card-oferta row">
-            <div>
-              <p>
-                Implementar un sistema de registro que permita a usuarios
-                mayores de 50 años recibir un descuento del 50% en todos los
-                productos. o Ofrecer un descuento del 10% de por vida para
-                usuarios que se registren con el código "FELICES50". o Proveer
-                tortas gratis para estudiantes de Duoc en su cumpleaños al
-                registrarse con su correo institucional.
-              </p>
+            <div class = "text-center">
+              <h3>
+                Si estas registrado en Pasteleria Mil Sabores puedes acceder a estos excelentes descuentos en tu compra
+              </h3>
+              <ul>
+                <p> Si eres mayor a 50 años obtendras un 50% de descuento en el total de tu compra</p>
+              </ul>
+              <ul>
+                <p>Si al momento de registrarse ocupas el codigo FELICES50 obtendras un 10% de descuento de por vida</p>
+              </ul>
+              <ul>
+                <p>Para cada estudiante de Duoc Uc que se registre con su correo institucional obtendra una torta gratis por su cumpleaños</p>
+              </ul>
 
               <button
                 type="button"
@@ -238,6 +242,20 @@
               >
                 Inicia Sesión
               </button>
+
+              <button
+                type="button"
+                class="btn-oferta"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Registrarse
+              </button>
+
+              
+
+
+              
             </div>
           </div>
         </section>
@@ -278,7 +296,7 @@
       </section>
       <section class="productos container-fluid" id="catalogo">
         <h1 style="display: flex; justify-content: center; align-items: center">
-          Nuestros productos
+          Nuestros Productos Destacados
         </h1>
         <div id="productos" class="row justify-content-center"></div>
       </section>
@@ -286,11 +304,28 @@
 
     <footer>
       <div class="footer-container">
-        <h3>Pasteleria</h3>
+        <div class="footer-content">
+          <h3>Pastelería Mil Sabores</h3>
+          <br>
+          <h3>Nuestras Sucursales</h3>
+          <li>
+            <p>Enrique Olivares 4970,Santiago, La Florida</p>
+          </li>
+          <li>
+            <p>Avenida Nueva Providencia 1953, Santiago, Providencia</p>
+          </li>
+        </div>
+        <div class="footer-logo">
+          <img src="img/logo.png" alt="Logo Pastelería Mil Sabores" />
+        </div>
       </div>
+
+      <div class = "footer-derechos text-center">
+          <p>© 2026 Todos los derechos reservados</p>
+        </div> 
     </footer>
 
-    <!-- MODAL PARA EL CARRITO -->
+    
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
