@@ -209,7 +209,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="registrarModalLabel">
-              Registrandose
+              Crea tu cuenta
             </h1>
 
             <button
@@ -221,7 +221,7 @@
           </div>
 
           <div class="modal-body">
-            <form id="registrarForm">
+            <form id="registrarForm" onsubmit="event.preventDefault();guardarUsuario();">
               <div class="mb-3">
                 <label for="nombre" class="form-label">
                   Nombre
@@ -230,7 +230,7 @@
                 <input 
                   type="nombre" 
                   class="form-control" 
-                  id="nombre" 
+                  id="regnombre" 
                   placeholder="Ingrese su nombre aquí..." 
                   required
                 />
@@ -243,7 +243,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="correo"
+                  id="regcorreo"
                   placeholder="ejemplo@correo.com"
                   required
                 />
@@ -255,10 +255,20 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="password"
+                  id="regpassword"
                   placeholder="Ingrese su contraseña"
                   required
                 />
+              </div>
+              <div class="mb-3">
+                <label for="cupon" class="form-label">Cupón de Bienvenida</label>
+                <input 
+                type="text"
+                class="form-control"
+                id="regcupon"
+                placeholder="Ingrese su cupon de bienvenida"
+                />
+
               </div>
 
               <div class="text-center">
@@ -446,5 +456,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="function.js"></script>
+    <script src="usuarios.js"></script>
   </body>
 </html>
