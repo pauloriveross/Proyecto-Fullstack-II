@@ -21,9 +21,10 @@ const productos = [
 
 function crearCard(producto) {
   const card = document.createElement('div');
-  card.className = 'card col-4';
+  card.className = 'card col-4 d-flex';
 
   card.innerHTML = `
+  <div class="d-flex flex-column h-100 p-2">
     <img
           src="img/${producto.imagen}"
           alt="Torta"
@@ -34,9 +35,10 @@ function crearCard(producto) {
     <h3>${producto.nombre}</h3>
     <p>$${producto.precio} CLP</p>
     <p> ${producto.descripcion} </p>
-    <button class="btn" onclick="agregarAlCarrito('${producto.codigo || ''}')">
+    <button class="btn mt-auto" onclick="agregarAlCarrito('${producto.codigo || ''}')">
       Agregar al carro
     </button>
+    </div>
   `;
 
   return card;

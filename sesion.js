@@ -1,6 +1,6 @@
 
 const llave1 ="pasteleria_mil_sabores";
-function iniciar(usuario) {
+function iniciar() {
     const correoIngresado = document.getElementById("logincorreo").value;
     const passwordIngresado = document.getElementById("loginpassword").value;
 
