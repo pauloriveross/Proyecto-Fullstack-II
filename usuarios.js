@@ -18,14 +18,17 @@ function guardarUsuario (){
         alert("La contraseña debe tener como minimo 6 caracteres , incluir una letra y un numero")
 
 
-    }else {
+    } else {
         const usuario_nuevo = {
             "nombre": nombre,
             "correo": correo,
-            "password":password
+            "password":password 
         }
     guardar(usuario_nuevo);
     document.getElementById('registrarForm').reset();
+    const modal = document.getElementById("registrarModal");
+    const modalIns = bootstrap.Modal.getInstance(modal);
+    modalIns.hide()
     }
 }
 

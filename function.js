@@ -29,6 +29,7 @@ function crearCard(producto) {
     <img
           src="img/${producto.imagen}"
           alt="Torta"
+          rel ="preload"
           class="img-fluid my-4"
           style="max-height: 300px;"
         />
