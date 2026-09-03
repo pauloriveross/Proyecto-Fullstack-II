@@ -19,8 +19,6 @@ const productos = [
   { codigo: "TE002",imagen:'tortaboda.png', categoria: "Tortas Especiales", nombre: "Torta Especial de Boda", precio: 60000 , descripcion : " Elegante y deliciosa, esta torta está diseñada para ser el centro de atención en cualquier boda."}
 ];
 
-const carrito = []
-
 function crearCard(producto) {
   const card = document.createElement('div');
   card.className = 'card col-4';

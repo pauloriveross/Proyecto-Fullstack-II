@@ -1,0 +1,123 @@
+=============================================
+  EXPLICACIÓN DEL CARRITO DE COMPRAS
+  Pastelería Mil Sabores
+=============================================
+
+1. ARCHIVO: carrito.js
+----------------------
+
+Este archivo contiene toda la lógica del carrito de compras usando localStorage
+para persistir los datos cuando el usuario recarga la página.
+
+ VARIABLES:
+  - let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    Al cargar el archivo, se obtiene el carrito guardado en localStorage.
+    Si no existe nada (primera vez), se crea un array vacío [].
+
+ FUNCIONES:
+
+  guardarCarrito()
+  - Convierte el array carrito a JSON y lo guarda en localStorage bajo
+    la clave "carrito". Esto permite que los datos persistan al recargar.
+
+  agregarAlCarrito(codigo)
+  - Busca el producto por su código en el array productos (de function.js).
+  - Si el producto ya está en el carrito, le suma 1 a la cantidad.
+  - Si no está, lo agrega con cantidad 1.
+  - Llama a guardarCarrito() para persistir.
+  - Llama a actualizarCarrito() para reflejar el cambio en la interfaz.
+  - Muestra el modal de confirmación con el nombre del producto.
+
+  eliminarDelCarrito(codigo)
+  - Filtra el array carrito para quitar el producto con el código indicado.
+  - Guarda y actualiza.
+
+  cambiarCantidad(codigo, delta)
+  - Busca el producto en el carrito.
+  - Cambia la cantidad según delta (+1 o -1).
+  - Si la cantidad llega a 0 o menos, elimina el producto del carrito.
+  - Guarda y actualiza.
+
+  vaciarCarrito()
+  - Reinicia el array carrito a vacío [].
+  - Guarda y actualiza.
+
+  calcularTotal()
+  - Recorre el carrito y suma (precio × cantidad) de cada producto.
+  - Retorna el total.
+
+  actualizarCarrito()
+  - Actualiza el badge (la bolita roja del ícono del carrito) con la
+    cantidad total de productos.
+  - Si el carrito está vacío, muestra "El carrito está vacío."
+  - Si tiene productos, genera el HTML de cada item con:
+    * Imagen del producto
+    * Nombre y precio
+    * Botones +/- para cambiar cantidad
+    * Botón de eliminar (tacho de basura)
+  - Actualiza el texto del total.
+
+  EVENTO DOMContentLoaded:
+  - Se ejecuta cuando el HTML está completamente cargado.
+  - Llama a actualizarCarrito() para mostrar el estado guardado.
+  - Asigna el evento click al botón "Vaciar Carrito".
+
+
+2. CAMBIOS EN index.html
+-------------------------
+
+Se agregó un MODAL de Bootstrap antes de los scripts:
+
+  <div class="modal fade" id="agregadoModal">
+    ...
+  </div>
+
+¿Por qué?
+  - Cuando el usuario hace clic en "Agregar al carro", necesita
+    una confirmación visual de que la acción fue exitosa.
+  - El modal muestra:
+    * Header verde con ícono de check y título "Producto Agregado"
+    * Mensaje dinámico: "Nombre del producto" se agregó al carrito exitosamente.
+    * Botón "Seguir Comprando": cierra el modal para seguir navegando.
+    * Botón "Ver Carrito": abre el offcanvas del carrito para ver lo agregado.
+
+También se agregó el script carrito.js EN function.js:
+
+  <script src="carrito.js"></script>
+  <script src="function.js"></script>
+
+¿Por qué el orden importa?
+  - carrito.js se carga primero porque define la función agregarAlCarrito()
+    que es llamada por function.js cuando crea las cards de productos.
+  - Si function.js se cargara primero, daría error porque llamaría
+    a agregarAlCarrito() antes de que exista.
+
+
+3. CAMBIOS EN function.js
+---------------------------
+
+Se eliminó la línea:
+  const carrito = []
+
+¿Por qué?
+  - Antes, el array carrito estaba declarado tanto en function.js como
+    inicializado en carrito.js, lo cual causaría conflicto.
+  - Ahora carrito.js es el único archivo que maneja el carrito.
+  - function.js solo se encarga de mostrar los productos y sus cards.
+
+
+4. FLUJO COMPLETO
+------------------
+
+  1. El usuario carga la página.
+  2. Se ejecuta carrito.js → carga el carrito desde localStorage.
+  3. Se ejecuta function.js → renderiza los productos con botones "Agregar al carro".
+  4. El usuario hace clic en "Agregar al carro".
+  5. Se llama a agregarAlCarrito(codigo) con el código del producto.
+  6. El producto se agrega al array carrito.
+  7. Se guarda en localStorage.
+  8. Se actualiza la interfaz (badge y offcanvas).
+  9. Se muestra el modal de confirmación.
+  10. El usuario puede seguir comprando o ver el carrito.
+
+=============================================
