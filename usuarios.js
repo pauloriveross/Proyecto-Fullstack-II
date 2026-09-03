@@ -1,15 +1,28 @@
 function guardarUsuario (){
     var nombre = document.getElementById("regnombre").value;
+    var apellido = document.getElementById("regapellido").value;
     var correo = document.getElementById("regcorreo").value;
     var password = document.getElementById("regpassword").value;
+    var fechaIngresada = document.getElementById("regfecha").value;
+    var cuponIngresado = document.getElementById("regcupon").value;
+
+
+
+    var cuponValido = "FELICES50";
+
+
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    const mensajeDiv = document.getElementById('mensajeRegistrar');
 
 
 
     if (nombre =='' || nombre.length <3 ) {
         alert("El nombre no puede estar vacio y debe ser mayor a 3 caracteres")
         
+    }else if (apellido =='' || apellido.length<3){
+        alert("El apellido no puede estar en blanco y debe ser mayor a 3 caracteres")
+
     }else if (!regexCorreo.test(correo)){
         alert("El correo no cumple con el formato correcto")
 
@@ -18,11 +31,22 @@ function guardarUsuario (){
         alert("La contraseña debe tener como minimo 6 caracteres , incluir una letra y un numero")
 
 
+    }else if(cuponIngresado !== "" && cuponIngresado !== cuponValido){
+        mensajeDiv.style.color = 'red';
+        mensajeDiv.innerText = "Cupón no válido";
+        return
+
+    }else if (fechaIngresada ===''){
+        alert("Debes seleccionar tu fecha de nacimiento")
     } else {
+
+        let tiene_descuento =(cuponIngresado === cuponValido);
         const usuario_nuevo = {
             "nombre": nombre,
+            "apellido":apellido,
             "correo": correo,
-            "password":password 
+            "password":password, 
+            "tiene descuento" : tiene_descuento
         }
     guardar(usuario_nuevo);
     document.getElementById('registrarForm').reset();
