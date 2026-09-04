@@ -35,3 +35,49 @@ function iniciar() {
     const modalLog = bootstrap.Modal.getInstance(modalLogin);
     modalLog.hide()
 }
+
+
+
+function recuperar() {
+
+    var recuperarcorreo = document.getElementById("recuperarcorreo").value;
+    const mensajeDivRecuperar = document.getElementById('mensajeRecuperar');
+
+    if (recuperarcorreo === '') {
+        mensajeDivRecuperar.style.color="red";
+        mensajeDivRecuperar.innerText="Por favor,Ingrese un correo electronico "
+        
+        return;
+    }
+    var storage = localStorage.getItem(llave1)
+    var storage_parse = storage ? JSON.parse(storage) : [];
+    
+
+    var cuentaEncontrada = storage_parse.find(function(u){
+        return u.correo === recuperarcorreo;
+    })
+
+
+    if (cuentaEncontrada) {
+        mensajeDivRecuperar.style.color="green";
+        mensajeDivRecuperar.innerText=`¡Cuenta Encontrada! Tu contraseña es: ${cuentaEncontrada.password}`;
+        
+        
+    }else{
+        mensajeDivRecuperar.style.color="red"
+        mensajeDivRecuperar.innerText="Este correo no se encuentra registrado en Pasteleria Mil Sabores";
+        
+
+    }
+    
+}
+
+
+const limpiarRecuperar = document.getElementById("recuperarModal");
+if (limpiarRecuperar) {
+    limpiarRecuperar.addEventListener('hidden.bs.modal',function(){
+        document.getElementById("recuperarForm").reset();
+        document.getElementById("mensajeRecuperar").innerText = "";
+    })
+    
+}
