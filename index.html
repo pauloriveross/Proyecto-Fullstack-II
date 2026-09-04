@@ -58,31 +58,34 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="#"> Todos Los Productos</a>
+                    <a class="dropdown-item" href="#catalogo" onclick="filtrar('Todos Los Productos')"> Todos Los Productos</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"> Productos Sin Azúcar</a>
+                    <a class="dropdown-item" href="#catalogo" onclick="filtrar('Productos Sin Azúcar')">Productos Sin Azúcar</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Tortas Cuadradas</a>
+                    <a class="dropdown-item" href="#catalogo" onclick="filtrar('Tortas Cuadradas')">Tortas Cuadradas</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Tortas Circulares</a>
+                    <a class="dropdown-item" href="#catalogo"  onclick="filtrar('Tortas Circulares')">Tortas Circulares</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Postres Individuales </a>
+                    <a class="dropdown-item" href="#catalogo"  onclick="filtrar('Postres Individuales')">Postres Individuales </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Pasteleria Tradicional</a>
+                    <a class="dropdown-item" href="#catalogo"  onclick="filtrar('Pastelería Tradicional')">Pasteleria Tradicional</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Productos Sin Gluten</a>
+                    <a class="dropdown-item" href="#catalogo"  onclick="filtrar('Productos Sin Gluten')">Productos Sin Gluten</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Productos Veganos</a>
+                    <a class="dropdown-item" href="#catalogo"  onclick="filtrar('Productos Veganos')">Productos Veganos</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Tortas Especiales</a>
+                    <a class="dropdown-item" href="#catalogo" onclick="filtrar('Tortas Especiales')">Tortas Especiales</a>
+                  </li>
+                  <li>
+                    <a  class= "dropdown-item" href="#catalogo"onclick="filtrar('Más Vendidos')">Productos Más Vendidos</a>
                   </li>
                 </ul>
               </li>
@@ -461,7 +464,7 @@
         </section>
       </section>
       <section class="productos container-fluid" id="catalogo">
-        <h1 style="display: flex; justify-content: center; align-items: center">
+        <h1  id= "titulo-catalogo" style=" display: flex; justify-content: center; align-items: center" >
           Nuestros Productos Destacados
         </h1>
         <div id="productos" class="row justify-content-center"></div>
