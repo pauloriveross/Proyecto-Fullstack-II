@@ -18,12 +18,15 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <img
-            src="img/logo.png"
-            alt="Logo Pastelería Mil Sabores"
-            class="img-fluid"
-            style="max-height: 90px"
-          />
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="img/logo.png"
+              alt="Logo Pastelería Mil Sabores"
+              class="img-fluid"
+              style="max-height: 90px"
+            />
+          </a>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -81,38 +84,47 @@
       <div class="adminform">
         <form>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Correo electrónico</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Contraseña</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div class="mb-3 form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1"
-              >Check me out</label
-            >
+                <label for="correo" class="form-label">
+                  Correo electrónico
+                </label>
+
+                <input
+                  type="email"
+                  class="form-control"
+                  id="logincorreo"
+                  placeholder="ejemplo@correo.com"
+                 
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label"> Contraseña </label>
+
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginpassword"
+                  placeholder="Ingrese su contraseña"
+                  
+                />
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary w-100">
+                  Iniciar Sesión
+                </button>
+              </div>
+
+              <div class="text-center mt-2">
+                <button 
+                  type="button" 
+                  class="btn btn- primary w-100" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#recuperarModal"
+                >
+                  Recuperar Contraseña
+                </button>
+              </div>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
