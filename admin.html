@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesion Admin Pasteleria</title>
     <link
-      rel="stylesheet"SSS
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     />
     <link
@@ -46,43 +46,20 @@
                 >
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder=""
-                aria-label="Buscar"
-              />
-              <button class="btn-nav" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-
-              <button
-                type="button"
-                class="carrito btn-nav position-relative"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#carritoOffcanvas"
-                aria-controls="carritoOffcanvas"
-              >
-                <i class="bi bi-cart"></i>
-              </button>
-              <button
-                type="button"
-                class="btn-nav"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-              >
-                <i class="bi bi-person"></i>
-              </button>
             </form>
           </div>
         </div>
       </nav>
+      <div class="container d-flex justify-content-center align-items-center my-5">
+        <h1>Panel de Administracion</h1>
+      </div>
+      
     </header>
 
     <main>
-      <div class="adminform">
-        <form>
+      <div class="container d-flex justify-content-center align-items-center my-5">
+        <div class="border rounded p-4 shadow-sm col-12 col-sm-8 col-md-6 col-lg-4">
+          <form>
           <div class="mb-3">
                 <label for="correo" class="form-label">
                   Correo electrónico
@@ -91,7 +68,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="logincorreo"
+                  id="admincorreo"
                   placeholder="ejemplo@correo.com"
                  
                 />
@@ -103,31 +80,21 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="loginpassword"
+                  id="adminpassword"
                   placeholder="Ingrese su contraseña"
                   
                 />
               </div>
 
               <div class="text-center">
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn btn-primary btn-sm w-100">
                   Iniciar Sesión
                 </button>
               </div>
-
-              <div class="text-center mt-2">
-                <button 
-                  type="button" 
-                  class="btn btn- primary w-100" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#recuperarModal"
-                >
-                  Recuperar Contraseña
-                </button>
-              </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        </div>
+        
       </div>
     </main>
 
