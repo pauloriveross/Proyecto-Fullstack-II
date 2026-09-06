@@ -38,6 +38,10 @@ function guardarUsuario (){
 
     }else if (fechaIngresada ===''){
         alert("Debes seleccionar tu fecha de nacimiento")
+        return
+    }else if (!validarFecha(fechaIngresada)) {
+        return
+
     } else {
 
         let tiene_descuento =(cuponIngresado === cuponValido);
@@ -46,7 +50,8 @@ function guardarUsuario (){
             "apellido":apellido,
             "correo": correo,
             "password":password, 
-            "tiene descuento" : tiene_descuento
+            "tiene descuento" : tiene_descuento,
+            "fechaNacimiento" : fechaIngresada
         }
     guardar(usuario_nuevo);
     document.getElementById('registrarForm').reset();
@@ -69,4 +74,34 @@ function guardar(usuario) {
     storage_parse.push(usuario);
     localStorage.setItem(llave, JSON.stringify(storage_parse));
     alert("Registro exitoso , ya puedes ingresar a tu cuenta")
+}
+
+
+
+function validarFecha(stringFecha) {
+    
+    const anioNac = parseInt(stringFecha.substring(0, 4));
+
+
+    if (isNaN(anioNac)) {
+        alert("Fecha no válida");
+        return false;
+    }
+    const anioActual = new Date().getFullYear();
+    const maximo = anioActual - 90;
+    const minimo = anioActual - 10;
+
+    if (anioNac < maximo ) {
+        alert("La fecha de nacimiento supera el limite de 90 años de antiguedad ")
+        return false;
+    }
+
+    if (anioNac > minimo) {
+        alert("Debes tener al menos 10 años para poder registrarte en Pasteleria Mil Sabores")
+        return false;
+        
+    }
+
+    return true;
+    
 }
