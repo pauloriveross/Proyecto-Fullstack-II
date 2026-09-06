@@ -162,3 +162,21 @@ p {
 .modal-content {
   background-color: #f4e2de;
 }
+
+.header .navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+.nav-link {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+#catalogo {
+  scroll-margin-top: 90px;
+}
