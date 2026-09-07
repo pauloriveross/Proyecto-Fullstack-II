@@ -25,6 +25,10 @@ function iniciar() {
         alert("Bienvenido Nuevamente a Pasteleria Mil Sabores")
          document.getElementById("loginForm").reset();
         
+    }else if (correoIngresado === "admin@pasteleria.cl"  || passwordIngresado === "admin12345678"){
+        alert("Tus credenciales han sido verificadas , accederas al panel de admin")
+        window.location.href = "dashboard.html"
+
     }else {
         alert("Error en las credenciales")
     }

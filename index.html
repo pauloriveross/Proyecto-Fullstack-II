@@ -559,5 +559,31 @@
     <script src="function.js"></script>
     <script src="usuarios.js"></script>
     <script src="sesion.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      const llave1 ="pasteleria_mil_sabores";
+        
+        const usuario = {
+            email: "admin@pasteleria.cl",
+            password :"admin12345678"
+        };
+
+        let listaUsuarios = JSON.parse(localStorage.getItem(llave1)) || [];
+
+        const usuarioYaExiste = listaUsuarios.some(user => user.email === usuario.email);
+        if (! usuarioYaExiste) {
+          listaUsuarios.push(usuario);
+          localStorage.setItem(llave1, JSON.stringify(listaUsuarios));
+          
+        } else {
+          console.log("Admin ya registrado  ")
+        }
+
+        
+        
+    });
+</script>
   </body>
 </html>
